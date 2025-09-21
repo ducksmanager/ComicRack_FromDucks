@@ -1,0 +1,24 @@
+{
+  "name": "comicrack-fromducks",
+  "version": "1.0.0",
+  "type": "module",
+  "engines": {
+    "node": ">=22.0.0 <23.0.0"
+  },
+  "description": "",
+  "scripts": {
+    "build": "zip -j FromDucks-${npm_package_version:-3.0}.crplugin _json_decode.py _json_scanner.py fromducks.ico FromDucks.py",
+    "deploy": "export GITHUB_TOKEN=$NPM_TOKEN && npm run build && semantic-release --no-ci",
+    "semantic-release": "semantic-release"
+  },
+  "license": "LGPL-3.0-only",
+  "devDependencies": {
+    "@semantic-release/exec": "^7.1.0",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^11.0.4",
+    "semantic-release": "^24.2.7"
+  },
+  "release": {
+    "extends": "./release.config.mjs"
+  }
+}

@@ -1,0 +1,4 @@
+*.crplugin
+.DS_Store
+.env.prod.local
+node_modules
