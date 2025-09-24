@@ -26,7 +26,7 @@ export const plugins = [
   [
     "@semantic-release/exec",
     {
-      prepareCmd: "zip -j FromDucks-plugin.crplugin _json_decode.py _json_scanner.py fromducks.ico FromDucks.py"
+      prepareCmd: "sed -i 's/^\\(Version[[:space:]]*=[[:space:]]*\\).*/\\13.0/' Package.ini && npm run build ${nextRelease.version}"
     }
   ],
   [
@@ -34,8 +34,8 @@ export const plugins = [
     {
       assets: [
         {
-          path: "FromDucks-plugin.crplugin",
-          label: "FromDucks ${nextRelease.version} Plugin"
+          path: "FromDucks-${nextRelease.version}.crplugin",
+          label: "FromDucks-${nextRelease.version}.crplugin"
         }
       ],
       releasedLabels: ["released"],
