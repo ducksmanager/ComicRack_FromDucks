@@ -7,8 +7,8 @@
   },
   "description": "",
   "scripts": {
-    "build": "zip -j FromDucks-${1:-3.0.0}.crplugin _json_decode.py _json_scanner.py fromducks.ico FromDucks.py LICENSE Package.ini README.md",
-    "deploy": "export GITHUB_TOKEN=$NPM_TOKEN && npm run build && semantic-release --no-ci",
+    "build": "zip -j FromDucks-${VERSION:-3.0.0}.crplugin _json_decode.py _json_scanner.py fromducks.ico FromDucks.py LICENSE Package.ini README.md",
+    "deploy": "export GITHUB_TOKEN=$NPM_TOKEN && semantic-release --no-ci",
     "semantic-release": "semantic-release"
   },
   "license": "LGPL-3.0-only",

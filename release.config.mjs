@@ -26,7 +26,7 @@ export const plugins = [
   [
     "@semantic-release/exec",
     {
-      prepareCmd: "sed -i 's/^\\(Version[[:space:]]*=[[:space:]]*\\).*/\\13.0/' Package.ini && npm run build ${nextRelease.version}"
+      prepareCmd: "rm -rf FromDucks-*.crplugin && export VERSION=${nextRelease.version} && sed -i '' 's/^Version[[:space:]]*=[[:space:]]*.*/Version     = ${nextRelease.version}/' Package.ini && npm run build"
     }
   ],
   [
@@ -34,7 +34,7 @@ export const plugins = [
     {
       assets: [
         {
-          path: "FromDucks-${nextRelease.version}.crplugin",
+          path: "FromDucks-*.crplugin",
           label: "FromDucks-${nextRelease.version}.crplugin"
         }
       ],
